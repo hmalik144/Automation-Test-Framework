@@ -1,6 +1,7 @@
 package stepDefinition
 
 import constants.Drivers
+import constants.Gender
 import io.cucumber.java.After
 import io.cucumber.java.Before
 import io.cucumber.java.en.Given
@@ -47,9 +48,9 @@ class PracticeFormPageSteps: DriverSteps() {
         }
     }
 
-    @When("user selects gender {string}")
-    fun user_selects_gender(gender: String?) {
-        gender?.let { formPageFactory.selectGender(gender) }
+    @When("user selects gender \"([^\"]*)\"$")
+    fun user_selects_gender(gender: Gender?) {
+        gender?.let { formPageFactory.selectGender(it) }
     }
 
     @When("user enters email address {string}")

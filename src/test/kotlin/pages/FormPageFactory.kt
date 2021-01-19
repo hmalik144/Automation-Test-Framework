@@ -1,5 +1,6 @@
 package pages
 
+import constants.Gender
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
@@ -43,11 +44,10 @@ class FormPageFactory(
 
     fun enterEmailAddress(email: String) = userEmail.sendKeys(email)
 
-    fun selectGender(gender: String) = when(gender){
-            "Male"-> male.click()
-            "Female"-> female.click()
-            "Other"-> other.click()
-        else -> {}
+    fun selectGender(gender: Gender) = when(gender){
+            Gender.Male-> male.click()
+            Gender.Female-> female.click()
+            Gender.Other-> other.click()
     }
 
     fun enterMobileNumber(mobile: String) = mobileNumber.sendKeys(mobile)
