@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit
 
 abstract class DriverSteps : Driver(){
 
-    fun createWebDriver(driver: Drivers): WebDriver{
-        return createChromeDriver(driver).apply {
+    fun retrieveWebDriver(driver: Drivers): WebDriver{
+        return createWebDriver(driver).apply {
             manage().timeouts().let { tO ->
                 tO.implicitlyWait(TIMEOUT_DURATION, TimeUnit.SECONDS)
                 tO.pageLoadTimeout(TIMEOUT_DURATION, TimeUnit.SECONDS)

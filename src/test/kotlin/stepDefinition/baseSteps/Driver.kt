@@ -7,7 +7,10 @@ import java.io.IOException
 
 abstract class Driver{
 
-    fun createChromeDriver(driver: Drivers): WebDriver {
+    /*
+     * create a web driver based on Browser selection
+     */
+    fun createWebDriver(driver: Drivers): WebDriver {
         val path = System.getProperty("user.dir")
         System.setProperty(driver.driverProperty, "$path\\src\\test\\resources\\drivers\\${driver.driverFileName}")
 

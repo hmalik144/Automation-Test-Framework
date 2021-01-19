@@ -24,7 +24,7 @@ class PracticeFormPageSteps: DriverSteps() {
 
     @Before
     fun setup(){
-        webDriver = createWebDriver(Drivers.Chrome)
+        webDriver = retrieveWebDriver(Drivers.Chrome)
 
         formPageFactory = FormPageFactory(webDriver)
         submittedFormFactory = SubmittedFormFactory(webDriver)
